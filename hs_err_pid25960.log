@@ -1,0 +1,239 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 536870912 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3703), pid=25960, tid=26196
+#
+# JRE version:  (23.0.1+11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.0.1+11-39, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\Sandra\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\petshop\bin -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=petshop petshop/petshop.petshop.Menu
+
+Host: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, 8 cores, 31G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5438)
+Time: Thu Feb 20 17:21:58 2025 Hora oficial do Brasil elapsed time: 0.026562 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001820a63ec80):  JavaThread "Unknown thread" [_thread_in_vm, id=26196, stack(0x00000031d9e00000,0x00000031d9f00000) (1024K)]
+
+Stack: [0x00000031d9e00000,0x00000031d9f00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e08b9]  (no source info available)
+V  [jvm.dll+0x87dc83]  (no source info available)
+V  [jvm.dll+0x88010e]  (no source info available)
+V  [jvm.dll+0x8807e3]  (no source info available)
+V  [jvm.dll+0x27aee6]  (no source info available)
+V  [jvm.dll+0x6dd1c5]  (no source info available)
+V  [jvm.dll+0x6d104a]  (no source info available)
+V  [jvm.dll+0x35b3ea]  (no source info available)
+V  [jvm.dll+0x3637f6]  (no source info available)
+V  [jvm.dll+0x34fd5e]  (no source info available)
+V  [jvm.dll+0x34fff8]  (no source info available)
+V  [jvm.dll+0x3289cc]  (no source info available)
+V  [jvm.dll+0x32966e]  (no source info available)
+V  [jvm.dll+0x844355]  (no source info available)
+V  [jvm.dll+0x3b9848]  (no source info available)
+V  [jvm.dll+0x82d14c]  (no source info available)
+V  [jvm.dll+0x454d4e]  (no source info available)
+V  [jvm.dll+0x456bd1]  (no source info available)
+C  [jli.dll+0x52a3]  (no source info available)
+C  [ucrtbase.dll+0x21bb2]  (no source info available)
+C  [KERNEL32.DLL+0x17374]  (no source info available)
+C  [ntdll.dll+0x4cc91]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffddde23618, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001820cad5e20 WorkerThread "GC Thread#0"                     [id=16980, stack(0x00000031d9f00000,0x00000031da000000) (1024K)]
+  0x000001820caeb680 ConcurrentGCThread "G1 Main Marker"            [id=26560, stack(0x00000031da000000,0x00000031da100000) (1024K)]
+  0x000001820caec190 WorkerThread "G1 Conc#0"                       [id=26128, stack(0x00000031da100000,0x00000031da200000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffddd56bfba]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffdddea3a10] Heap_lock - owner thread: 0x000001820a63ec80
+
+Heap address: 0x0000000602000000, size: 8160 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+
+Heap:
+ garbage-first heap   total reserved 8355840K, committed 0K, used 0K [0x0000000602000000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffddd96c3c9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library D:\PROGRAMAS JAVA\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6033a0000 - 0x00007ff6033b0000 	D:\PROGRAMAS JAVA\bin\javaw.exe
+0x00007ffe931d0000 - 0x00007ffe933c8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe915d0000 - 0x00007ffe91692000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe909b0000 - 0x00007ffe90caf000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe90e40000 - 0x00007ffe90f40000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe5bb10000 - 0x00007ffe5bb2b000 	D:\PROGRAMAS JAVA\bin\VCRUNTIME140.dll
+0x00007ffe6dc00000 - 0x00007ffe6dc17000 	D:\PROGRAMAS JAVA\bin\jli.dll
+0x00007ffe92500000 - 0x00007ffe9269d000 	C:\Windows\System32\USER32.dll
+0x00007ffe90e10000 - 0x00007ffe90e32000 	C:\Windows\System32\win32u.dll
+0x00007ffe7a8b0000 - 0x00007ffe7ab4a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16\COMCTL32.dll
+0x00007ffe91290000 - 0x00007ffe912bb000 	C:\Windows\System32\GDI32.dll
+0x00007ffe91530000 - 0x00007ffe915ce000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe90f70000 - 0x00007ffe9108a000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe91150000 - 0x00007ffe911ed000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe913f0000 - 0x00007ffe9141f000 	C:\Windows\System32\IMM32.DLL
+0x00007ffe891c0000 - 0x00007ffe891cc000 	D:\PROGRAMAS JAVA\bin\vcruntime140_1.dll
+0x00007ffe204f0000 - 0x00007ffe2057e000 	D:\PROGRAMAS JAVA\bin\msvcp140.dll
+0x00007ffddd230000 - 0x00007ffdddf7f000 	D:\PROGRAMAS JAVA\bin\server\jvm.dll
+0x00007ffe91780000 - 0x00007ffe9182f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe92300000 - 0x00007ffe9239f000 	C:\Windows\System32\sechost.dll
+0x00007ffe92fa0000 - 0x00007ffe930c3000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe90f40000 - 0x00007ffe90f67000 	C:\Windows\System32\bcrypt.dll
+0x00007ffe92470000 - 0x00007ffe924db000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe8fdb0000 - 0x00007ffe8fdfb000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffe85840000 - 0x00007ffe8584a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe79490000 - 0x00007ffe794b7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe8fc70000 - 0x00007ffe8fc82000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffe8f090000 - 0x00007ffe8f0a2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffe715f0000 - 0x00007ffe715fa000 	D:\PROGRAMAS JAVA\bin\jimage.dll
+0x00007ffe8ed90000 - 0x00007ffe8ef74000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffe77df0000 - 0x00007ffe77e24000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffe90920000 - 0x00007ffe909a2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe54920000 - 0x00007ffe5493e000 	D:\PROGRAMAS JAVA\bin\java.dll
+0x00007ffe912c0000 - 0x00007ffe913eb000 	C:\Windows\System32\ole32.dll
+0x00007ffe91fa0000 - 0x00007ffe922f5000 	C:\Windows\System32\combase.dll
+0x00007ffe927d0000 - 0x00007ffe92f3d000 	C:\Windows\System32\SHELL32.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\PROGRAMAS JAVA\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16;D:\PROGRAMAS JAVA\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\Sandra\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\petshop\bin -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=petshop 
+java_command: petshop/petshop.petshop.Menu
+java_class_path (initial): <not set>
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 8556380160                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832704                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122945536                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122880000                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 8556380160                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=D:/ESTUDO/TI/EM CURSO/GENERATION DEVAS 80/sts-4.27.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.5.v20241023-1957/jre/bin/server;D:/ESTUDO/TI/EM CURSO/GENERATION DEVAS 80/sts-4.27.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.5.v20241023-1957/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;D:\Arquivos de programas\Git\cmd;D:\PROGRAMAS JAVA\;C:\ProgramData\UNIVALI\Portugol Studio;C:\Users\Sandra\AppData\Local\Programs\Python\Launcher\;C:\Users\Sandra\AppData\Local\Microsoft\WindowsApps;C:\Users\Sandra\AppData\Local\Programs\Microsoft VS Code\bin;D:\Arquivos de programas\IntelliJ IDEA 2024.3\bin;;C:\Users\Sandra\AppData\Local\GitHubDesktop\bin;C:\Users\Sandra\AppData\Roaming\npm;D:\Arquivos de programas\PyCharm 2024.3.2\bin;;D:\ESTUDO\TI\EM CURSO\GENERATION DEVAS 80\sts-4.27.0.RELEASE;
+USERNAME=Sandra
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+TMP=C:\Users\Sandra\AppData\Local\Temp
+TEMP=C:\Users\Sandra\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5438)
+OS uptime: 0 days 10:01 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 158 stepping 9 microcode 0xea, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, rdtscp, f16c
+Processor Information for the first 8 processors :
+  Max Mhz: 2801, Current Mhz: 2800, Mhz Limit: 2772
+
+Memory: 4k page, system-wide physical 32633M (17346M free)
+TotalPageFile size 34681M (AvailPageFile size 85M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 61M, peak: 572M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.0.1+11-39) for windows-amd64 JRE (23.0.1+11-39), built on 2024-09-30T07:20:43Z with MS VC++ 17.6 (VS2022)
+
+END.

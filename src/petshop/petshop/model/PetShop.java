@@ -1,59 +1,69 @@
 package petshop.petshop.model;
 
 public abstract class PetShop {
-  private int tipo;
-  private String nome;
-  private float valor;
- 
-  public PetShop(int tipo, String nome, float valor) {
-	super();
-	this.tipo = tipo;
-	this.nome = nome;
-	this.valor = valor;
-}
+	private int tipo;
+	private String nome;
+	private float valor;
+	private int ID;
 
-public int getTipo() {
-	return tipo;
-}
+	public PetShop(int tipo, String nome, float valor, int ID) {
+		super();
+		this.tipo = tipo;
+		this.nome = nome;
+		this.valor = valor;
+		this.ID = ID;
+	}
 
-public void setTipo(int tipo) {
-	this.tipo = tipo;
-}
+	public int getTipo() {
+		return tipo;
+	}
 
-public String getNome() {
-	return nome;
-}
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
 
-public void setNome(String nome) {
-	this.nome = nome;
-}
+	public String getNome() {
+		return nome;
+	}
 
-public float getValor() {
-	return valor;
-}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-public void setValor(float valor) {
-	this.valor = valor;
-}
-   
-public void visualizar() {
-	 String tipo = "";
-	 
-	 switch(this.tipo) {
-	 case 1:
-		 tipo = "Cachorro";
-		 break;    		 
-	 case 2:
-		 tipo = "Gato";
-		 break;
-		 
-	 }
-   System.out.println("\n\n***************************************************");	 
-   System.out.println("Dados do produto: ");
-   System.out.println("****************************************************");
-   System.out.println("Nome do produto: " + this.nome);
-   System.out.println("Tipo de animal: " + tipo);
-   System.out.println("Valor do produto: " + this.valor);
-   
-}
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public void visualizar() {
+		String tipo = "";
+
+		switch (this.tipo) {
+		case 1:
+			tipo = "Cachorro";
+			break;
+		case 2:
+			tipo = "Gato";
+			break;
+
+		}
+		System.out.println("\n\n***************************************************");
+		System.out.println("Dados do produto: ");
+		System.out.println("****************************************************");
+		System.out.println("Nome do produto: " + this.nome);
+		System.out.println("Tipo de animal: " + tipo);
+		System.out.println("Valor do produto: " + this.valor);
+
+	}
 }
